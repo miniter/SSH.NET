@@ -1,14 +1,24 @@
-os: Visual Studio 2015
-
-before_build:
-  - nuget restore src\Renci.SshNet.VS2015.sln
-
-build:
-  project: src\Renci.SshNet.VS2015.sln
-  verbosity: minimal
-
-test_script:
+init:
 - cmd: >-
-    vstest.console /logger:Appveyor src\Renci.SshNet.Tests\bin\Debug\Renci.SshNet.Tests.dll /TestCaseFilter:"TestCategory!=integration&TestCategory!=LongRunning"
+    tzutil /s "Eastern Standard Time"
+image: Visual Studio 2017
 
-    vstest.console /logger:Appveyor src\Renci.SshNet.Tests.NET35\bin\Debug\Renci.SshNet.Tests.NET35.dll /TestCaseFilter:"TestCategory!=integration&TestCategory!=LongRunning"
+nuget:
+  disable_publish_on_pr: true
+skip_tags: true
+build_script:
+- cmd: >-
+    choco install cake.portable -r -y
+
+    cake
+artifacts:
+  path: Artifacts\*.nupkg
+test: off
+notifications:
+- provider: Slack
+  incoming_webhook: 
+    secure: jAHwieC/ls9GRYV3YawixFkHoUekBo17Sq63Ik5AYYKHbm+GZwLKJy9ni7gsxwXVwA+79fbacsARTacf1bvYSJFALusnWuqqBa208OqYvFc=
+  channel: builds
+  on_build_success: true
+  on_build_failure: true
+  on_build_status_changed: false    

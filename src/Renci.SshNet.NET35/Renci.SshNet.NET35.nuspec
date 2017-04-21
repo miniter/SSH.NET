@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>SSH.NET</id>
@@ -16,8 +16,7 @@
         <language>en-US</language>
         <tags>ssh scp sftp</tags>
         <dependencies>
-          <group targetFramework="net35" />
-          <group targetFramework="net40" />
+          <group targetFramework="net461" />
           <group targetFramework="netstandard1.3">
             <dependency id="Microsoft.CSharp" version="4.0.1" />
             <dependency id="SshNet.Security.Cryptography" version="[1.2.0]" />
@@ -40,22 +39,6 @@
             <dependency id="System.Threading.ThreadPool" version="4.0.10" />
             <dependency id="System.Threading.Timer" version="4.0.1" />
             <dependency id="System.Xml.XmlDocument" version="4.0.1" />
-            <dependency id="System.Xml.XPath.XmlDocument" version="4.0.1" />
-          </group>
-          <group targetFramework="sl4">
-            <dependency id="SshNet.Security.Cryptography" version="[1.2.0]" />
-          </group>
-          <group targetFramework="sl5">
-            <dependency id="SshNet.Security.Cryptography" version="[1.2.0]" />
-          </group>
-          <group targetFramework="wp71">
-            <dependency id="SshNet.Security.Cryptography" version="[1.2.0]" />
-          </group>
-          <group targetFramework="wp8">
-            <dependency id="SshNet.Security.Cryptography" version="[1.2.0]" />
-          </group>
-          <group targetFramework="uap10.0">
-            <dependency id="SshNet.Security.Cryptography" version="[1.2.0]" />
             <dependency id="System.Xml.XPath.XmlDocument" version="4.0.1" />
           </group>
         </dependencies>

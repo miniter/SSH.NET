@@ -5,6 +5,7 @@ using Renci.SshNet.Common;
 using System.Globalization;
 using System.Net;
 using Renci.SshNet.Abstractions;
+using CountdownEvent = System.Threading.CountdownEvent;
 
 namespace Renci.SshNet
 {
